@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KWASHATE 2026 – Awards & Eligibility</title>
+    <!-- Luxury Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           RESET & BASE
+           ============================================================ */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f4f9;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a { text-decoration: none; }
+
+        /* ============================================================
+           NAVIGATION (UPDATED FOR MOBILE COLLAPSE)
+           ============================================================ */
+        nav {
+            background: #1A1A2E; /* Deep Royal Navy */
+            color: #ffffff;
+            padding: 16px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        nav .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav .logo span { color: #D4AF37; /* Gold */ }
+
+        /* --- THE HAMBURGER MENU ICON --- */
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #D4AF37;
+            user-select: none;
+        }
+
+        /* --- NAVIGATION LINKS --- */
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: #D4AF37; }
+
+        .nav-cta {
+            background: #D4AF37;
+            color: #1A1A2E !important;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .nav-cta:hover { background: #e6c04c; transform: scale(1.05); }
+
+        /* --- MOBILE RESPONSIVE STYLES --- */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block; /* Show the hamburger menu on mobile */
+            }
+
+            .nav-links {
+                display: none; /* Hide links by default on mobile */
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 20px 0;
+                background: #1A1A2E;
+                position: absolute;
+                top: 70px; /* Position directly below the nav bar */
+                left: 0;
+                z-index: 999;
+                border-bottom: 2px solid #D4AF37;
+            }
+
+            .nav-links.active {
+                display: flex; /* Show links when the class is toggled */
+            }
+
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 8px 0;
+            }
+
+            .nav-cta {
+                width: 80%;
+                text-align: center;
+            }
+        }
+
+        /* ============================================================
+           HERO HEADER
+           ============================================================ */
+        .page-header {
+            background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.95)), 
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .page-header h1 span { color: #D4AF37; }
+
+        .page-header .tagline {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* ============================================================
+           CONTAINER
+           ============================================================ */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1A1A2E;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* ============================================================
+           CONTENT STYLES
+           ============================================================ */
+        .content-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border: 1px solid #eef2f7;
+        }
+
+        .content-card h3 {
+            color: #1A1A2E;
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+        }
+
+        .content-card h3 span { color: #D4AF37; }
+
+        .content-card p {
+            color: #2c3e50;
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .content-card ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .content-card ul li {
+            margin-bottom: 8px;
+            font-size: 1rem;
+            color: #2c3e50;
+        }
+
+        /* ============================================================
+           ELIGIBILITY GRID
+           ============================================================ */
+        .eligibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .eligibility-item {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 12px;
+            border-left: 4px solid #D4AF37;
+            font-weight: 600;
+            color: #1A1A2E;
+            text-align: center;
+        }
+
+        /* ============================================================
+           AWARD CATEGORIES STYLES
+           ============================================================ */
+        .award-group {
+            margin-bottom: 40px;
+        }
+
+        .award-group h4 {
+            font-size: 1.8rem;
+            color: #1A1A2E;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 10px;
+        }
+
+        .award-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .award-card {
+            background: #ffffff;
+            padding: 20px 15px;
+            border-radius: 12px;
+            border: 1px solid #eef2f7;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .award-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: #D4AF37;
+        }
+
+        .award-card .trophy-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .award-card .award-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #1A1A2E;
+        }
+
+        /* ============================================================
+           BUTTONS & CTAs
+           ============================================================ */
+        .btn-primary {
+            background: #E94560; /* Ruby Red */
+            color: #ffffff;
+            padding: 16px 36px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            display: inline-block;
+            transition: 0.2s;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(233, 69, 96, 0.5); }
+
+        /* ============================================================
+           WHATSAPP FLOATING BUTTON
+           ============================================================ */
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #25D366;
+            color: white;
+            padding: 14px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 999;
+        }
+
+        .wa-float:hover { transform: scale(1.05); }
+
+        /* ============================================================
+           RESPONSIVE (Additional mobile tweaks)
+           ============================================================ */
+        @media (max-width: 700px) {
+            .page-header h1 { font-size: 2.2rem; }
+            .award-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <div class="logo">KWASHATE <span>2026</span></div>
+        
+        <!-- THE HAMBURGER MENU ICON -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about-event.html">About</a>
+            <a href="awards.html">Awards</a>
+            <a href="nominate.html">Nominate</a>
+            <a href="nominees.html">Nominees</a>
+            <a href="join-dhs.html" class="nav-cta">Contact</a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO HEADER ===== -->
+    <header class="page-header">
+        <h1>KWASHATE <span>Awards</span></h1>
+        <p class="tagline">Recognizing excellence, innovation, and growth in Kwara State's hospitality and tourism industry.</p>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <section class="container">
+
+        <!-- ===== MISSION & INTRODUCTION ===== -->
+        <div class="content-card">
+            <h3>🏆 <span>Our Mission</span></h3>
+            <p>Over recent years, the hospitality and tourism industry in Kwara State has grown significantly, and this combined with increasing customer expectation has presented many new challenges for firms across the industry.</p>
+            <p>At <strong>Drecot Consults</strong>, we recognized this, and felt that many firms whose works are vital to the industry were not being sufficiently rewarded and recognized. To rectify this, we created the <strong>Kwara State Hospitality and Tourism Expo (KWASHATE)</strong>, designed to enlighten and educate the participants, reward and recognize the firms and the individuals behind them that have worked tirelessly over the past 12 months to achieve industry-leading success, client satisfaction, and market growth.</p>
+            <p>Through our staffing division, <strong>Hospitality Recruit</strong>, we also provide professional staff and training to hotels and event centers across the state.</p>
+        </div>
+
+        <!-- ===== ELIGIBILITY SECTION ===== -->
+        <div class="content-card">
+            <h3>✅ <span>Eligibility Requirements</span></h3>
+            <p>To ensure the integrity and fairness of the KWASHATE Awards, the following criteria apply to all nominees:</p>
+            
+            <div class="eligibility-grid">
+                <div class="eligibility-item">🏨 Hotels (1+ year operation, CAC registered)</div>
+                <div class="eligibility-item">🍸 Clubs & Lounges (1+ year, CAC registered)</div>
+                <div class="eligibility-item">✈️ Airlines (1+ year operation, CAC registered)</div>
+                <div class="eligibility-item">🚌 Land Transport Companies (1+ year, CAC registered)</div>
+                <div class="eligibility-item">🍔 Restaurants & Fast-Food (1+ year, CAC registered)</div>
+            </div>
+        </div>
+
+        <!-- ===== AWARD CATEGORIES ===== -->
+
+        <!-- HOTELS -->
+        <div class="content-card award-group">
+            <h4>🏨 Hotels</h4>
+            <div class="award-grid">
+                <div class="award-card"><span class="trophy-icon">🏆</span><div class="award-name">Best Luxury Hotel</div></div>
+                <div class="award-card"><span class="trophy-icon">🌿</span><div class="award-name">Best Green Hotel</div></div>
+                <div class="award-card"><span class="trophy-icon">🏟️</span><div class="award-name">Best Sport Hotel</div></div>
+                <div class="award-card"><span class="trophy-icon">💼</span><div class="award-name">Best Business Hotel</div></div>
+                <div class="award-card"><span class="trophy-icon">🎨</span><div class="award-name">Best Design Hotel</div></div>
+                <div class="award-card"><span class="trophy-icon">🏛️</span><div class="award-name">Best Historical Hotel</div></div>
+                <div class="award-card"><span class="trophy-icon">💡</span><div class="award-name">Best Innovative Hotel</div></div>
+                <div class="award-card"><span class="trophy-icon">🚀</span><div class="award-name">Opening of the Year</div></div>
+                <div class="award-card"><span class="trophy-icon">🍸</span><div class="award-name">Best Bar In A Hotel</div></div>
+                <div class="award-card"><span class="trophy-icon">🌙</span><div class="award-name">Best Nightlife Hotel</div></div>
+                <div class="award-card"><span class="trophy-icon">🧑‍💼</span><div class="award-name">Best Hotel GM</div></div>
+                <div class="award-card"><span class="trophy-icon">🏡</span><div class="award-name">Best Guest House</div></div>
+                <div class="award-card"><span class="trophy-icon">🛏️</span><div class="award-name">Best Motel</div></div>
+                <div class="award-card"><span class="trophy-icon">🌅</span><div class="award-name">Best Night View Hotel</div></div>
+                <div class="award-card"><span class="trophy-icon">🤝</span><div class="award-name">Best Corporate Social Responsibility</div></div>
+            </div>
+        </div>
+
+        <!-- RESTAURANTS & FAST-FOOD -->
+        <div class="content-card award-group">
+            <h4>🍔 Restaurants & Fast-Food</h4>
+            <div class="award-grid">
+                <div class="award-card"><span class="trophy-icon">🍽️</span><div class="award-name">Best Restaurant</div></div>
+                <div class="award-card"><span class="trophy-icon">🍟</span><div class="award-name">Best Fast-Food</div></div>
+                <div class="award-card"><span class="trophy-icon">🌍</span><div class="award-name">Best African Restaurant</div></div>
+                <div class="award-card"><span class="trophy-icon">🍝</span><div class="award-name">Best Continental Restaurant</div></div>
+            </div>
+        </div>
+
+        <!-- TRANSPORT -->
+        <div class="content-card award-group">
+            <h4>🚌 Transport</h4>
+            <div class="award-grid">
+                <div class="award-card"><span class="trophy-icon">🚛</span><div class="award-name">Best Transport Company</div></div>
+                <div class="award-card"><span class="trophy-icon">✈️</span><div class="award-name">Best Operating Airline</div></div>
+                <div class="award-card"><span class="trophy-icon">🕰️</span><div class="award-name">The Oldest Transport Company</div></div>
+                <div class="award-card"><span class="trophy-icon">🧳</span><div class="award-name">Best Traveling Agency</div></div>
+            </div>
+        </div>
+
+        <!-- GENERAL -->
+        <div class="content-card award-group">
+            <h4>🎉 General</h4>
+            <div class="award-grid">
+                <div class="award-card"><span class="trophy-icon">🎤</span><div class="award-name">Best Club</div></div>
+                <div class="award-card"><span class="trophy-icon">🍷</span><div class="award-name">Best Lounge</div></div>
+                <div class="award-card"><span class="trophy-icon">📅</span><div class="award-name">Best Event Planner</div></div>
+                <div class="award-card"><span class="trophy-icon">🏛️</span><div class="award-name">Best Event Centre</div></div>
+                <div class="award-card"><span class="trophy-icon">🥘</span><div class="award-name">Best Catering Services</div></div>
+                <div class="award-card"><span class="trophy-icon">🎭</span><div class="award-name">Best Event Decorator</div></div>
+            </div>
+        </div>
+
+        <!-- ===== NOMINATION CTA ===== -->
+        <div class="content-card" style="text-align: center; background: #1A1A2E; color: #ffffff;">
+            <h3 style="color: #D4AF37;">Ready to Nominate Your Business?</h3>
+            <p style="color: #e2e8f0; font-size: 1.1rem; max-width: 600px; margin: 0 auto 20px;">
+                If your business meets the eligibility requirements, we invite you to secure your nomination for the 2026 KWASHATE Awards.
+            </p>
+            <a href="https://wa.me/2348039661354?text=I%20want%20to%20nominate%20my%20business%20for%20KWASHATE%202026" class="btn-primary">📋 Nominate Now</a>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="container" style="padding-top:0;">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have questions about nominations, attending, or sponsoring?</p>
+        
+        <div class="content-card" style="text-align: center; max-width: 500px; margin: 0 auto;">
+            <div style="font-size:1.5rem; margin-bottom:12px;">📞 08039661354</div>
+            <div style="color:#7f8c8d; margin-bottom:8px;">Email: oborimusa@gmail.com</div>
+            <a href="join-dhs.html" class="btn-primary" style="display:inline-block; margin-top:16px;">📱 Contact Us</a>
+        </div>
+    </section>
+
+    <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+    <a href="https://wa.me/2348039661354?text=Hello%20KWASHATE%20Team!%20I%20need%20more%20information." class="wa-float">
+        💬 Chat with us
+    </a>
+
+    <!-- ===== JAVASCRIPT FOR HAMBURGER MENU ===== -->
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("navLinks");
+            menu.classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>

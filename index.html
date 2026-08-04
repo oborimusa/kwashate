@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KWASHATE 2026 – Kwara State Hospitality & Tourism Expo</title>
+    <!-- Luxury Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           RESET & BASE
+           ============================================================ */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f4f9;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a { text-decoration: none; }
+
+        /* ============================================================
+           NAVIGATION
+           ============================================================ */
+        nav {
+            background: #1A1A2E; /* Deep Royal Navy */
+            color: #ffffff;
+            padding: 16px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        nav .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav .logo span { color: #D4AF37; /* Metallic Gold */ }
+
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #D4AF37;
+            user-select: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: #D4AF37; }
+
+        .nav-cta {
+            background: #D4AF37;
+            color: #1A1A2E !important;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .nav-cta:hover { background: #e6c04c; transform: scale(1.05); }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 20px 0;
+                background: #1A1A2E;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                z-index: 999;
+                border-bottom: 2px solid #D4AF37;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links a { width: 100%; text-align: center; padding: 8px 0; }
+            .nav-cta { width: 80%; text-align: center; }
+        }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 46, 0.80), rgba(26, 26, 46, 0.90)), 
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span { color: #D4AF37; }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 12px;
+            opacity: 0.9;
+        }
+
+        .hero .gov-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid #D4AF37;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            margin-bottom: 24px;
+            color: #D4AF37;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #E94560; /* Ruby Red */
+            color: #ffffff;
+            padding: 16px 36px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            display: inline-block;
+            transition: 0.2s;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(233, 69, 96, 0.5); }
+
+        .btn-outline {
+            background: transparent;
+            color: #ffffff;
+            padding: 16px 36px;
+            border: 2px solid #D4AF37;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-block;
+            transition: 0.2s;
+        }
+
+        .btn-outline:hover { background: #D4AF37; color: #1A1A2E; }
+
+        /* ============================================================
+           SECTIONS
+           ============================================================ */
+        .container { max-width: 950px; margin: 0 auto; padding: 60px 20px; }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1A1A2E;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* ============================================================
+           CSS GOLD TROPHY
+           ============================================================ */
+        .trophy-container { display: flex; justify-content: center; align-items: center; margin: 0 auto; }
+        .css-trophy {
+            width: 120px; height: 200px;
+            background: linear-gradient(135deg, #f9e79f, #f1c40f, #d4ac0d, #f1c40f);
+            border-radius: 30px 30px 10px 10px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex; justify-content: center; align-items: center;
+            transition: transform 0.3s ease;
+        }
+        .css-trophy:hover { transform: scale(1.05) rotate(2deg); }
+        .css-trophy::before {
+            content: ''; position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%);
+            width: 80px; height: 20px; background: linear-gradient(to right, #d4ac0d, #f1c40f);
+            border-radius: 10px 10px 0 0;
+        }
+        .css-trophy::after {
+            content: ''; position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%);
+            width: 100px; height: 10px; background: linear-gradient(to right, #b8860b, #f1c40f);
+            border-radius: 5px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .trophy-star { font-size: 3.5rem; color: #fff; text-shadow: 0 0 20px rgba(255,215,0,0.8); z-index: 10; background: rgba(0,0,0,0.1); padding: 10px; border-radius: 50%; }
+
+        /* ============================================================
+           AWARD SHOWCASE SECTION
+           ============================================================ */
+        .award-section {
+            background: #ffffff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            display: flex; align-items: center; justify-content: center; gap: 40px; margin: 40px 0;
+            padding: 40px; flex-wrap: wrap; border: 1px solid #eef2f7;
+        }
+        .award-text { flex: 1; min-width: 250px; }
+        .award-text h3 { color: #1A1A2E; font-size: 1.8rem; margin-bottom: 12px; }
+        .award-text p { color: #7f8c8d; font-size: 1.05rem; margin-bottom: 16px; }
+
+        /* ============================================================
+           GRID LAYOUT
+           ============================================================ */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .card {
+            background: #ffffff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            text-align: center; border: 1px solid #eef2f7; transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .card-icon { font-size: 2.8rem; margin-bottom: 16px; }
+        .card h3 { margin-bottom: 8px; font-size: 1.3rem; color: #1A1A2E; }
+        .card p { color: #7f8c8d; font-size: 0.95rem; margin-bottom: 16px; }
+        .card .btn-small { background: #1A1A2E; color: #ffffff; padding: 10px 28px; border-radius: 40px; font-weight: 600; display: inline-block; transition: 0.2s; }
+        .card .btn-small:hover { background: #D4AF37; color: #1A1A2E; }
+
+        /* ============================================================
+           CONTACT / FOOTER
+           ============================================================ */
+        .contact-card { background: #1A1A2E; color: #ffffff; border-radius: 16px; padding: 40px; text-align: center; max-width: 500px; margin: 0 auto; }
+        .contact-card .phone { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: #D4AF37; }
+        .contact-card .email { color: #cbd5e1; margin-bottom: 20px; }
+
+        /* ============================================================
+           WHATSAPP FLOATING BUTTON
+           ============================================================ */
+        .wa-float { position: fixed; bottom: 24px; right: 24px; background: #25D366; color: white; padding: 14px 20px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); display: flex; align-items: center; gap: 8px; z-index: 999; }
+        .wa-float:hover { transform: scale(1.05); }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 2.2rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .award-section { flex-direction: column; text-align: center; padding: 24px; }
+            .award-text { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">KWASHATE <span>2026</span></div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about-event.html">About</a>
+            <a href="awards.html">Awards</a>
+            <a href="nominate.html">Nominate</a>
+            <a href="nominees.html">Nominees</a>
+            <a href="join-dhs.html" class="nav-cta">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="gov-badge">✅ Pre-Approved by the Kwara State Government (2022)</div>
+        <h1>Reviving Excellence in <span>Kwara Hospitality</span></h1>
+        <p class="tagline">The Kwara State Hospitality and Tourism Expo (KWASHATE) returns to honor the hotels, restaurants, and individuals driving the growth of our local tourism industry.</p>
+        <div class="hero-buttons">
+            <a href="https://wa.me/2348039661354?text=I%20want%20to%20nominate%20my%20business%20for%20KWASHATE%202026" class="btn-primary">📋 Nominate Your Business</a>
+            <a href="https://wa.me/2348039661354?text=I%20want%20to%20attend%20KWASHATE%202026" class="btn-outline">🎟️ Reserve Your Table</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <div style="background:#ffffff; padding:30px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.05); margin-bottom:20px;">
+            <p style="font-size:1.1rem; color:#2c3e50;">
+                Over the years, the hospitality and tourism industry in Kwara State has grown significantly. At Drecot Consults, we recognized that many firms whose works are vital to the industry were not being sufficiently rewarded. 
+                We created KWASHATE to enlighten, educate, and recognize the firms and individuals who have worked tirelessly to achieve industry-leading success.
+            </p>
+            <p style="font-size:1.1rem; color:#2c3e50; margin-top:12px;">
+                <strong>KWASHATE is now a fully private sector initiative.</strong> We are not seeking government funding—we are seeking private sector collaboration and industry excellence.
+            </p>
+        </div>
+
+        <div class="award-section">
+            <div class="trophy-container">
+                <div class="css-trophy"><div class="trophy-star">⭐</div></div>
+            </div>
+            <div class="award-text">
+                <h3>🏆 The KWASHATE Gold Award</h3>
+                <p>This is the highest symbol of excellence in Kwara's hospitality industry. Each year, we present this prestigious gold trophy to the hotels, chefs, and tourism leaders who have gone above and beyond to serve their communities and build the state's economy.</p>
+                <p><strong>Do you have what it takes to hold this trophy?</strong></p>
+                <a href="https://wa.me/2348039661354?text=I%20want%20to%20nominate%20my%20business%20for%20KWASHATE%202026" class="btn-primary" style="display:inline-block; margin-top:10px;">Nominate Your Business</a>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="card" id="nominate">
+                <div class="card-icon">🏆</div>
+                <h3>Nominate Your Business</h3>
+                <p>Has your hotel, restaurant, or tourism business excelled this year? Secure your nomination for one of our prestigious award categories today.</p>
+                <a href="https://wa.me/2348039661354?text=I%20want%20to%20nominate%20my%20business%20for%20KWASHATE%202026" class="btn-small">Nominate Now</a>
+            </div>
+            <div class="card" id="attend">
+                <div class="card-icon">🎉</div>
+                <h3>Attend the Expo</h3>
+                <p>Join us for a night of networking, awards, and celebration. Meet the top decision-makers in Kwara's tourism industry. Reserve your table today.</p>
+                <a href="https://wa.me/2348039661354?text=I%20want%20to%20attend%20KWASHATE%202026" class="btn-small">Reserve a Table</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container" style="padding-top:0;">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have questions about nominations, attending, or sponsoring?</p>
+        <div class="contact-card">
+            <div class="phone">📞 08039661354</div>
+            <div class="email">oborimusa@gmail.com</div>
+            <a href="https://wa.me/2348039661354" class="btn-primary" style="display:inline-block;">📱 Chat on WhatsApp</a>
+        </div>
+    </section>
+
+    <a href="https://wa.me/2348039661354?text=Hello%20KWASHATE%20Team!%20I%20need%20more%20information." class="wa-float">💬 Chat with us</a>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("navLinks");
+            menu.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

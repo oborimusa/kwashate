@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nominees – KWASHATE 2026 Awards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f4f4f9; color: #2c3e50; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; }
+
+        nav { background: #1A1A2E; color: #ffffff; padding: 16px 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; box-shadow: 0 2px 10px rgba(0,0,0,0.3); position: relative; }
+        nav .logo { font-size: 1.6rem; font-weight: 700; letter-spacing: 1px; }
+        nav .logo span { color: #D4AF37; }
+        .hamburger { display: none; font-size: 2rem; cursor: pointer; color: #D4AF37; user-select: none; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: #ffffff; font-weight: 600; font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: #D4AF37; }
+        .nav-cta { background: #D4AF37; color: #1A1A2E !important; padding: 8px 20px; border-radius: 40px; font-weight: 700; transition: 0.2s; }
+        .nav-cta:hover { background: #e6c04c; transform: scale(1.05); }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; gap: 15px; padding: 20px 0; background: #1A1A2E; position: absolute; top: 70px; left: 0; z-index: 999; border-bottom: 2px solid #D4AF37; }
+            .nav-links.active { display: flex; }
+            .nav-links a { width: 100%; text-align: center; padding: 8px 0; }
+            .nav-cta { width: 80%; text-align: center; }
+        }
+
+        .page-header { background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.95)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; color: #ffffff; padding: 80px 20px 60px; text-align: center; }
+        .page-header h1 { font-size: 3rem; font-weight: 700; margin-bottom: 16px; }
+        .page-header h1 span { color: #D4AF37; }
+        .page-header .tagline { font-size: 1.1rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        .section-title { text-align: center; font-size: 2.2rem; font-weight: 700; margin-bottom: 12px; color: #1A1A2E; }
+        .section-subtitle { text-align: center; color: #7f8c8d; margin-bottom: 40px; font-size: 1.1rem; }
+
+        .content-card { background: #ffffff; border-radius: 16px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border: 1px solid #eef2f7; }
+        .content-card h3 { color: #1A1A2E; font-size: 1.6rem; margin-bottom: 16px; }
+        .content-card h3 span { color: #D4AF37; }
+        .content-card p { color: #2c3e50; font-size: 1.05rem; margin-bottom: 16px; line-height: 1.8; }
+
+        .nominee-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
+        .nominee-card { background: #ffffff; padding: 15px; border-radius: 12px; border: 1px solid #eef2f7; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s; }
+        .nominee-card:hover { transform: translateY(-4px); }
+        .nominee-card .business-name { font-weight: 700; color: #1A1A2E; }
+        .nominee-card .business-category { font-size: 0.85rem; color: #7f8c8d; }
+
+        .btn-primary { background: #E94560; color: #ffffff; padding: 16px 36px; border: none; border-radius: 50px; font-weight: 700; font-size: 1rem; display: inline-block; transition: 0.2s; box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(233, 69, 96, 0.5); }
+
+        .wa-float { position: fixed; bottom: 24px; right: 24px; background: #25D366; color: white; padding: 14px 20px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); display: flex; align-items: center; gap: 8px; z-index: 999; }
+        .wa-float:hover { transform: scale(1.05); }
+
+        @media (max-width: 700px) {
+            .page-header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">KWASHATE <span>2026</span></div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about-event.html">About</a>
+            <a href="awards.html">Awards</a>
+            <a href="nominate.html">Nominate</a>
+            <a href="nominees.html">Nominees</a>
+            <a href="join-dhs.html" class="nav-cta">Contact</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>2026 <span>Nominees</span></h1>
+        <p class="tagline">The official list of verified nominees for the Kwara State Hospitality Award.</p>
+    </header>
+
+    <section class="container">
+        <div class="content-card" style="text-align: center; background: #1A1A2E; color: #ffffff;">
+            <h3 style="color: #D4AF37;">📢 Nominations are currently OPEN</h3>
+            <p style="color: #e2e8f0; font-size: 1.1rem; max-width: 600px; margin: 0 auto 20px;">The list of verified nominees will be published on <strong>12th November, 2026</strong>. If you have submitted a nomination, you will be notified via WhatsApp once your eligibility is confirmed.</p>
+            <a href="nominate.html" class="btn-primary">📋 Submit Your Nomination</a>
+        </div>
+
+        <div class="content-card">
+            <h3>🏨 <span>Hotels</span></h3>
+            <div class="nominee-grid"><div class="nominee-card"><div class="business-name">Nominations are currently open</div><div class="business-category">List will be published on 12th November</div></div></div>
+        </div>
+
+        <div class="content-card">
+            <h3>🍔 <span>Restaurants & Fast-Food</span></h3>
+            <div class="nominee-grid"><div class="nominee-card"><div class="business-name">Nominations are currently open</div><div class="business-category">List will be published on 12th November</div></div></div>
+        </div>
+
+        <div class="content-card">
+            <h3>🚌 <span>Transport</span></h3>
+            <div class="nominee-grid"><div class="nominee-card"><div class="business-name">Nominations are currently open</div><div class="business-category">List will be published on 12th November</div></div></div>
+        </div>
+
+        <div class="content-card">
+            <h3>🎉 <span>General</span></h3>
+            <div class="nominee-grid"><div class="nominee-card"><div class="business-name">Nominations are currently open</div><div class="business-category">List will be published on 12th November</div></div></div>
+        </div>
+    </section>
+
+    <section id="contact" class="container" style="padding-top:0;">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have questions about nominations, attending, or sponsoring?</p>
+        <div class="content-card" style="text-align: center; max-width: 500px; margin: 0 auto;">
+            <div style="font-size:1.5rem; margin-bottom:12px;">📞 08039661354</div>
+            <div style="color:#7f8c8d; margin-bottom:8px;">Email: oborimusa@gmail.com</div>
+            <a href="join-dhs.html" class="btn-primary" style="display:inline-block; margin-top:16px;">📱 Contact Us</a>
+        </div>
+    </section>
+
+    <a href="https://wa.me/2348039661354?text=Hello%20KWASHATE%20Team!%20I%20need%20more%20information." class="wa-float">💬 Chat with us</a>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("navLinks");
+            menu.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

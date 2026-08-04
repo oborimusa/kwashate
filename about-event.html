@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About KWASHATE – Kwara State Hospitality & Tourism Expo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           RESET & BASE
+           ============================================================ */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f4f4f9; color: #2c3e50; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; }
+
+        /* ============================================================
+           NAVIGATION
+           ============================================================ */
+        nav { background: #1A1A2E; color: #ffffff; padding: 16px 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; box-shadow: 0 2px 10px rgba(0,0,0,0.3); position: relative; }
+        nav .logo { font-size: 1.6rem; font-weight: 700; letter-spacing: 1px; }
+        nav .logo span { color: #D4AF37; }
+        .hamburger { display: none; font-size: 2rem; cursor: pointer; color: #D4AF37; user-select: none; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: #ffffff; font-weight: 600; font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: #D4AF37; }
+        .nav-cta { background: #D4AF37; color: #1A1A2E !important; padding: 8px 20px; border-radius: 40px; font-weight: 700; transition: 0.2s; }
+        .nav-cta:hover { background: #e6c04c; transform: scale(1.05); }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; gap: 15px; padding: 20px 0; background: #1A1A2E; position: absolute; top: 70px; left: 0; z-index: 999; border-bottom: 2px solid #D4AF37; }
+            .nav-links.active { display: flex; }
+            .nav-links a { width: 100%; text-align: center; padding: 8px 0; }
+            .nav-cta { width: 80%; text-align: center; }
+        }
+
+        /* ============================================================
+           HERO HEADER
+           ============================================================ */
+        .page-header { background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.95)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; color: #ffffff; padding: 80px 20px 60px; text-align: center; }
+        .page-header h1 { font-size: 3rem; font-weight: 700; margin-bottom: 16px; }
+        .page-header h1 span { color: #D4AF37; }
+        .page-header .tagline { font-size: 1.1rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+
+        /* ============================================================
+           CONTAINER
+           ============================================================ */
+        .container { max-width: 950px; margin: 0 auto; padding: 60px 20px; }
+        .section-title { text-align: center; font-size: 2.2rem; font-weight: 700; margin-bottom: 12px; color: #1A1A2E; }
+        .section-subtitle { text-align: center; color: #7f8c8d; margin-bottom: 40px; font-size: 1.1rem; }
+
+        /* ============================================================
+           CONTENT CARDS
+           ============================================================ */
+        .content-card { background: #ffffff; border-radius: 16px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border: 1px solid #eef2f7; }
+        .content-card h3 { color: #1A1A2E; font-size: 1.6rem; margin-bottom: 16px; }
+        .content-card h3 span { color: #D4AF37; }
+        .content-card p { color: #2c3e50; font-size: 1.05rem; margin-bottom: 16px; line-height: 1.8; }
+
+        .highlight-box { background: #1A1A2E; color: #ffffff; border-radius: 16px; padding: 30px; margin: 20px 0; border-left: 6px solid #D4AF37; }
+        .highlight-box h4 { color: #D4AF37; font-size: 1.3rem; margin-bottom: 12px; }
+        .highlight-box p { color: #e2e8f0; margin-bottom: 8px; }
+
+        /* ============================================================
+           GOVERNMENT RECOGNITION
+           ============================================================ */
+        .gov-recognition { background: #ffffff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); padding: 40px; margin: 40px 0; text-align: center; border: 2px solid #D4AF37; }
+        .gov-recognition h3 { color: #1A1A2E; font-size: 1.8rem; margin-bottom: 16px; }
+        .gov-recognition h3 span { color: #D4AF37; }
+        .gov-recognition img { width: 100%; max-width: 700px; height: auto; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); margin: 20px 0; }
+        .gov-recognition .caption { color: #7f8c8d; font-size: 0.95rem; margin-top: 12px; font-style: italic; }
+        .gov-recognition .badge-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+        .gov-recognition .trust-badge { background: #f8f9fa; padding: 10px 20px; border-radius: 40px; border: 1px solid #eef2f7; font-weight: 600; color: #1A1A2E; }
+
+        /* ============================================================
+           EVENT GALLERY (4 PHOTOS)
+           ============================================================ */
+        .gallery-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .gallery-2x2 img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .gallery-2x2 img:hover { transform: scale(1.02); }
+
+        /* ============================================================
+           EVENT DETAILS
+           ============================================================ */
+        .event-details { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+        .event-item { background: #f8f9fa; padding: 20px; border-radius: 12px; text-align: center; }
+        .event-item .icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+        .event-item .label { font-weight: 600; color: #1A1A2E; font-size: 1.1rem; }
+        .event-item .value { color: #7f8c8d; font-size: 1rem; }
+
+        /* ============================================================
+           WHATSAPP FLOATING BUTTON
+           ============================================================ */
+        .wa-float { position: fixed; bottom: 24px; right: 24px; background: #25D366; color: white; padding: 14px 20px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); display: flex; align-items: center; gap: 8px; z-index: 999; }
+        .wa-float:hover { transform: scale(1.05); }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 700px) {
+            .page-header h1 { font-size: 2.2rem; }
+            .event-details { grid-template-columns: 1fr; }
+            .gallery-2x2 { grid-template-columns: 1fr; } /* Stack photos on mobile */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">KWASHATE <span>2026</span></div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about-event.html">About</a>
+            <a href="awards.html">Awards</a>
+            <a href="nominate.html">Nominate</a>
+            <a href="nominees.html">Nominees</a>
+            <a href="join-dhs.html" class="nav-cta">Contact</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>About the <span>KWASHATE Gala</span></h1>
+        <p class="tagline">Celebrating excellence in Kwara State's hospitality and tourism industry.</p>
+    </header>
+
+    <section class="container">
+
+        <!-- ===== ABOUT DRECOT CONSULTS ===== -->
+        <div class="content-card">
+            <h3>🏨 <span>Drecot Consults</span></h3>
+            <p>Drecot Consults is a hospitality support firm that has taken a great step to develop the hospitality industry in Nigeria, starting from Kwara State and spreading high standards through the organizing of state Hospitality Awards.</p>
+            <p>Through our staffing division, <strong>Hospitality Recruit</strong>, we provide professional staff and training to hotels, restaurants, and event centers across the state.</p>
+            <p>Our mission is to increase the level of comfort and loyalty of guests, to raise demand for hospitality industry services and related spheres, and to contribute to the economic growth of the nation.</p>
+        </div>
+
+        <!-- ===== GOVERNMENT RECOGNITION ===== -->
+        <div class="gov-recognition">
+            <h3>🏛️ <span>Official Government Approval</span></h3>
+            
+            <!-- Main Photo: The Deputy Governor meeting -->
+            <img 
+                src="https://static.wixstatic.com/media/4fdb46_6190714e4211431e86f96e7a7e6b8a4d~mv2.jpeg/v1/fill/w_988,h_724,al_c,q_85,usm_4.00_1.00_0.00,enc_avif,quality_auto/4fdb46_6190714e4211431e86f96e7a7e6b8a4d~mv2.jpeg" 
+                alt="KWASHATE Delegation meeting with the Deputy Governor of Kwara State"
+            >
+            
+            <p class="caption">
+                In 2022, the KWASHATE delegation—comprising the <strong>National Orientation Agency (NOA)</strong> and the founder of KWASHATE—met with the Deputy Governor of Kwara State to formally present the event proposal. 
+                The Deputy Governor gave his official approval and blessing for the event to proceed. 
+                However, due to bureaucratic delays and the withdrawal of government funding, the event did not materialize at that time.
+            </p>
+            
+            <div class="badge-container">
+                <span class="trust-badge">✅ Approved by the Deputy Governor (2022)</span>
+                <span class="trust-badge">🏛️ Endorsed by NOA Kwara State</span>
+                <span class="trust-badge">🏆 Proven Government-Level Proposal</span>
+                <span class="trust-badge">🤝 Private Sector Relaunch 2026</span>
+            </div>
+        </div>
+
+        <!-- ===== THE CONCEPT ===== -->
+        <div class="content-card">
+            <h3>💡 <span>The Concept</span></h3>
+            <p>KWASHATE was created to enlighten, educate, and recognize the firms and individuals who have worked tirelessly to achieve industry-leading success, client satisfaction, and market growth. We bring together the best minds in Kwara's hospitality sector to celebrate innovation, dedication, and excellence.</p>
+        </div>
+
+        <!-- ===== EVENT DETAILS ===== -->
+        <div class="content-card">
+            <h3>📅 <span>Event Details</span></h3>
+            <p>We invite you to take part in the <strong>Kwara State Hospitality Awards Gala Ceremony</strong>.</p>
+            <div class="event-details">
+                <div class="event-item"><span class="icon">📍</span><div class="label">Venue</div><div class="value">Banquet Hall, Kwara State</div></div>
+                <div class="event-item"><span class="icon">📅</span><div class="label">Date</div><div class="value">7th February, 2026</div></div>
+            </div>
+        </div>
+
+        <!-- ===== THE PRIZE ===== -->
+        <div class="content-card">
+            <h3>🏆 <span>The Prize</span></h3>
+            <p>We are proud to partner with <strong>Tiger Ltd</strong>, a modern, dynamically developing company that has successfully specialized in equipment for the decoration of glass and ceramics for over 10 years.</p>
+            <p>Tiger Ltd strives to keep abreast of the latest innovations and trends presented in the world of glass and ceramics markets. A key principle of the company is to provide excellent quality and reliable materials.</p>
+            <div class="highlight-box">
+                <h4>✨ The KWASHATE Gold Award</h4>
+                <p>Each year, we present this prestigious trophy to the hotels, chefs, and tourism leaders who have gone above and beyond to serve their communities and build the state's economy.</p>
+            </div>
+        </div>
+
+        <!-- ===== EVENT GALLERY (4 PHOTOS) ===== -->
+        <div class="content-card">
+            <h3>📸 <span>KWASHATE 2022 Government Meeting Gallery</span></h3>
+            <p>Highlights from the 2022 meeting with the Kwara State Deputy Governor and NOA delegation.</p>
+            
+            <div class="gallery-2x2">
+                <!-- Photo 1: Group photo with Deputy Governor, NOA Director & Deputy -->
+                <img 
+                    src="https://static.wixstatic.com/media/4fdb46_6190714e4211431e86f96e7a7e6b8a4d~mv2.jpeg/v1/fill/w_988,h_724,al_c,q_85,usm_4.00_1.00_0.00,enc_avif,quality_auto/4fdb46_6190714e4211431e86f96e7a7e6b8a4d~mv2.jpeg" 
+                    alt="KWASHATE Delegation with Deputy Governor, NOA Director, and Deputy"
+                >
+                
+                <!-- Photo 2: Obori and the Deputy Governor -->
+                <img 
+                    src="https://static.wixstatic.com/media/4fdb46_200d317bf88f4b01bd55d80084d6d281~mv2.jpeg/v1/fill/w_988,h_724,al_c,q_85,usm_4.00_1.00_0.00,enc_avif,quality_auto/4fdb46_200d317bf88f4b01bd55d80084d6d281~mv2.jpeg" 
+                    alt="Obori Dahiru with the Deputy Governor of Kwara State"
+                >
+                
+                <!-- Photo 3: Meeting attendees -->
+                <img 
+                    src="https://static.wixstatic.com/media/4fdb46_42c8a8e0d7604507bf73d02aa7bfc6d8~mv2.jpg/v1/fill/w_625,h_458,al_c,lg_1,q_80,usm_4.00_1.00_0.00,enc_avif,quality_auto/4fdb46_42c8a8e0d7604507bf73d02aa7bfc6d8~mv2.jpg" 
+                    alt="KWASHATE Meeting Attendees"
+                >
+                
+                <!-- Photo 4: Group photo -->
+                <img 
+                    src="https://static.wixstatic.com/media/4fdb46_44934adb51c24b6bb7d09e9edd7a6020~mv2.jpg/v1/fill/w_983,h_720,al_c,q_85,usm_4.00_1.00_0.00,enc_avif,quality_auto/4fdb46_44934adb51c24b6bb7d09e9edd7a6020~mv2.jpg" 
+                    alt="KWASHATE Group Photo"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="container" style="padding-top:0;">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have questions about nominations, attending, or sponsoring?</p>
+        <div class="content-card" style="text-align: center; max-width: 500px; margin: 0 auto;">
+            <div style="font-size:1.5rem; margin-bottom:12px;">📞 08039661354</div>
+            <div style="color:#7f8c8d; margin-bottom:8px;">Email: oborimusa@gmail.com</div>
+            <a href="join-dhs.html" class="btn-primary" style="display:inline-block; margin-top:16px;">📱 Contact Us</a>
+        </div>
+    </section>
+
+    <a href="https://wa.me/2348039661354?text=Hello%20KWASHATE%20Team!%20I%20need%20more%20information." class="wa-float">💬 Chat with us</a>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("navLinks");
+            menu.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
