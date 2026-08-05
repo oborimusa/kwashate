@@ -19,67 +19,20 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-        }
-
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
         a { text-decoration: none; }
 
         /* ============================================================
            NAVIGATION
            ============================================================ */
-        nav {
-            background: #1A1A2E; /* Deep Royal Navy */
-            color: #ffffff;
-            padding: 16px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            position: relative;
-        }
-
-        nav .logo {
-            font-size: 1.6rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        nav .logo span { color: #D4AF37; /* Metallic Gold */ }
-
-        .hamburger {
-            display: none;
-            font-size: 2rem;
-            cursor: pointer;
-            color: #D4AF37;
-            user-select: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
+       nav { background: #1A1A2E; color: #ffffff; padding: 16px 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; box-shadow: 0 2px 10px rgba(0,0,0,0.3); position: relative; }
+        nav .logo { font-size: 1.6rem; font-weight: 700; letter-spacing: 1px; }
+        nav .logo span { color: #D4AF37; }
+        .hamburger { display: none; font-size: 2rem; cursor: pointer; color: #D4AF37; user-select: none; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: #ffffff; font-weight: 600; font-size: 0.9rem; transition: color 0.2s; }
         .nav-links a:hover { color: #D4AF37; }
-
-        .nav-cta {
-            background: #D4AF37;
-            color: #1A1A2E !important;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-weight: 700;
-            transition: 0.2s;
-        }
-
+        .nav-cta { background: #D4AF37; color: #1A1A2E !important; padding: 8px 20px; border-radius: 40px; font-weight: 700; transition: 0.2s; }
         .nav-cta:hover { background: #e6c04c; transform: scale(1.05); }
 
         @media (max-width: 768px) {
@@ -130,17 +83,6 @@
             max-width: 600px;
             margin: 0 auto 12px;
             opacity: 0.9;
-        }
-
-        .hero .gov-badge {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.15);
-            border: 1px solid #D4AF37;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            margin-bottom: 24px;
-            color: #D4AF37;
         }
 
         .hero-buttons {
@@ -273,14 +215,15 @@
             .hero h1 { font-size: 2.2rem; }
             .grid-2 { grid-template-columns: 1fr; }
             .award-section { flex-direction: column; text-align: center; padding: 24px; }
-            .award-text { text-align: center; }
         }
     </style>
 </head>
 <body>
 
+    <!-- ===== NAVIGATION ===== -->
     <nav>
-        <div class="logo">KWASHATE <span>2026</span></div>
+       <div class="logo">KWASHATE <span>2026</span></div>
+        </div>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
         <div class="nav-links" id="navLinks">
             <a href="index.html" class="nav-cta">Home</a>
@@ -292,8 +235,8 @@
         </div>
     </nav>
 
+    <!-- ===== HERO SECTION ===== -->
     <header class="hero">
-        <div class="gov-badge">✅ Pre-Approved by the Kwara State Government (2022)</div>
         <h1>Reviving Excellence in <span>Kwara Hospitality</span></h1>
         <p class="tagline">The Kwara State Hospitality and Tourism Expo (KWASHATE) returns to honor the hotels, restaurants, and individuals driving the growth of our local tourism industry.</p>
         <div class="hero-buttons">
@@ -302,7 +245,10 @@
         </div>
     </header>
 
+    <!-- ===== MAIN CONTENT ===== -->
     <section class="container">
+
+        <!-- ===== INTRODUCTION ===== -->
         <div style="background:#ffffff; padding:30px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.05); margin-bottom:20px;">
             <p style="font-size:1.1rem; color:#2c3e50;">
                 Over the years, the hospitality and tourism industry in Kwara State has grown significantly. At Drecot Consults, we recognized that many firms whose works are vital to the industry were not being sufficiently rewarded. 
@@ -313,6 +259,7 @@
             </p>
         </div>
 
+        <!-- ===== CSS TROPHY SHOWCASE ===== -->
         <div class="award-section">
             <div class="trophy-container">
                 <div class="css-trophy"><div class="trophy-star">⭐</div></div>
@@ -321,37 +268,40 @@
                 <h3>🏆 The KWASHATE Gold Award</h3>
                 <p>This is the highest symbol of excellence in Kwara's hospitality industry. Each year, we present this prestigious gold trophy to the hotels, chefs, and tourism leaders who have gone above and beyond to serve their communities and build the state's economy.</p>
                 <p><strong>Do you have what it takes to hold this trophy?</strong></p>
-                <a href="https://wa.me/2348039661354?text=I%20want%20to%20nominate%20my%20business%20for%20KWASHATE%202026" class="btn-primary" style="display:inline-block; margin-top:10px;">Nominate Your Business</a>
+                <a href="https://wa.me/+2348039661354?text=I%20want%20to%20nominate%20my%20business%20for%20KWASHATE%202026" class="btn-primary" style="display:inline-block; margin-top:10px;">Nominate Your Business</a>
             </div>
         </div>
 
+        <!-- ===== GRID CARDS ===== -->
         <div class="grid-2">
             <div class="card" id="nominate">
                 <div class="card-icon">🏆</div>
                 <h3>Nominate Your Business</h3>
                 <p>Has your hotel, restaurant, or tourism business excelled this year? Secure your nomination for one of our prestigious award categories today.</p>
-                <a href="https://wa.me/2348039661354?text=I%20want%20to%20nominate%20my%20business%20for%20KWASHATE%202026" class="btn-small">Nominate Now</a>
+                <a href="https://wa.me/+2348039661354?text=I%20want%20to%20nominate%20my%20business%20for%20KWASHATE%202026" class="btn-small">Nominate Now</a>
             </div>
             <div class="card" id="attend">
                 <div class="card-icon">🎉</div>
                 <h3>Attend the Expo</h3>
                 <p>Join us for a night of networking, awards, and celebration. Meet the top decision-makers in Kwara's tourism industry. Reserve your table today.</p>
-                <a href="https://wa.me/2348039661354?text=I%20want%20to%20attend%20KWASHATE%202026" class="btn-small">Reserve a Table</a>
+                <a href="https://wa.me/+2348039661354?text=I%20want%20to%20attend%20KWASHATE%202026" class="btn-small">Reserve a Table</a>
             </div>
         </div>
     </section>
 
+    <!-- ===== CONTACT SECTION ===== -->
     <section id="contact" class="container" style="padding-top:0;">
         <h2 class="section-title">Get In Touch</h2>
         <p class="section-subtitle">Have questions about nominations, attending, or sponsoring?</p>
         <div class="contact-card">
             <div class="phone">📞 08039661354</div>
             <div class="email">oborimusa@gmail.com</div>
-            <a href="https://wa.me/2348039661354" class="btn-primary" style="display:inline-block;">📱 Chat on WhatsApp</a>
+            <a href="https://wa.me/+2348039661354" class="btn-primary" style="display:inline-block;">📱 Chat on WhatsApp</a>
         </div>
     </section>
 
-    <a href="https://wa.me/2348039661354?text=Hello%20KWASHATE%20Team!%20I%20need%20more%20information." class="wa-float">💬 Chat with us</a>
+    <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+    <a href="https://wa.me/+2348039661354?text=Hello%20KWASHATE%20Team!%20I%20need%20more%20information." class="wa-float">💬 Chat with us</a>
 
     <script>
         function toggleMenu() {
