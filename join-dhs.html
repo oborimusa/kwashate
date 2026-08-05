@@ -1,31 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Join Hospitality Recruit – Staffing & Training</title>
     <!-- Luxury Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        /* ============================================================
+      /* ============================================================
            RESET & BASE
            ============================================================ */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #f4f4f9;
-            color: #2c3e50;
-            line-height: 1.6;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
-        a { text-decoration: none; }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f4f4f9;
+        color: #2c3e50;
+        line-height: 1.6;
+      }
 
-        /* ============================================================
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      /* ============================================================
            NAVIGATION
            ============================================================ */
-        nav {
+     nav {
             background: #1A1A2E; /* Deep Royal Navy */
             color: #ffffff;
             padding: 16px 30px;
@@ -37,16 +51,13 @@
             position: relative;
         }
 
-        /* The logo is now a clickable link to the main website */
-        nav .logo a {
-            font-size: 1.4rem;
+        nav .logo {
+            font-size: 1.6rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
-            color: #ffffff;
-            text-decoration: none;
+            letter-spacing: 1px;
         }
 
-        nav .logo a span { color: #D4AF37; /* Gold */ }
+        nav .logo span { color: #D4AF37; /* Metallic Gold */ }
 
         .hamburger {
             display: none;
@@ -82,425 +93,540 @@
 
         .nav-cta:hover { background: #e6c04c; transform: scale(1.05); }
 
-        @media (max-width: 768px) {
-            .hamburger { display: block; }
-            .nav-links {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-                padding: 20px 0;
-                background: #1A1A2E;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                z-index: 999;
-                border-bottom: 2px solid #D4AF37;
-            }
-            .nav-links.active { display: flex; }
-            .nav-links a { width: 100%; text-align: center; padding: 8px 0; }
-            .nav-cta { width: 80%; text-align: center; }
+      @media (max-width: 768px) {
+        .hamburger {
+          display: block;
         }
+        .nav-links {
+          display: none;
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+          padding: 20px 0;
+          background: #1a1a2e;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          z-index: 999;
+          border-bottom: 2px solid #d4af37;
+        }
+        .nav-links.active {
+          display: flex;
+        }
+        .nav-links a {
+          width: 100%;
+          text-align: center;
+          padding: 8px 0;
+        }
+        .nav-cta {
+          width: 80%;
+          text-align: center;
+        }
+      }
 
-        /* ============================================================
+      /* ============================================================
            HERO HEADER
            ============================================================ */
-        .page-header {
-            background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.95)), 
-                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            color: #ffffff;
-            padding: 80px 20px 60px;
-            text-align: center;
-        }
+      .page-header {
+        background:
+          linear-gradient(rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.95)),
+          url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80");
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
+        padding: 80px 20px 60px;
+        text-align: center;
+      }
 
-        .page-header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
+      .page-header h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
 
-        .page-header h1 span { color: #D4AF37; }
-        .page-header .tagline {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
+      .page-header h1 span {
+        color: #d4af37;
+      }
+      .page-header .tagline {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+        opacity: 0.9;
+      }
 
-        /* ============================================================
+      /* ============================================================
            CONTAINER
            ============================================================ */
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
+      .container {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #1A1A2E;
-        }
+      .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #1a1a2e;
+      }
 
-        .section-subtitle {
-            text-align: center;
-            color: #7f8c8d;
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-        }
+      .section-subtitle {
+        text-align: center;
+        color: #7f8c8d;
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+      }
 
-        /* ============================================================
+      /* ============================================================
            CONTENT CARDS
            ============================================================ */
-        .content-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-            border: 1px solid #eef2f7;
-        }
+      .content-card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+        border: 1px solid #eef2f7;
+      }
 
-        .content-card h3 {
-            color: #1A1A2E;
-            font-size: 1.6rem;
-            margin-bottom: 16px;
-        }
+      .content-card h3 {
+        color: #1a1a2e;
+        font-size: 1.6rem;
+        margin-bottom: 16px;
+      }
 
-        .content-card h3 span { color: #D4AF37; }
-        .content-card p {
-            color: #2c3e50;
-            font-size: 1.05rem;
-            margin-bottom: 16px;
-            line-height: 1.8;
-        }
+      .content-card h3 span {
+        color: #d4af37;
+      }
+      .content-card p {
+        color: #2c3e50;
+        font-size: 1.05rem;
+        margin-bottom: 16px;
+        line-height: 1.8;
+      }
 
-        .content-card ul {
-            padding-left: 20px;
-            margin-top: 10px;
-        }
+      .content-card ul {
+        padding-left: 20px;
+        margin-top: 10px;
+      }
 
-        .content-card ul li {
-            margin-bottom: 8px;
-            font-size: 1rem;
-            color: #2c3e50;
-        }
+      .content-card ul li {
+        margin-bottom: 8px;
+        font-size: 1rem;
+        color: #2c3e50;
+      }
 
-        /* ============================================================
+      /* ============================================================
            JOB GRID
            ============================================================ */
-        .job-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 10px;
-            margin-top: 15px;
-        }
+      .job-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+        margin-top: 15px;
+      }
 
-        .job-tag {
-            background: #f8f9fa;
-            padding: 10px 15px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border: 1px solid #eef2f7;
-            color: #1A1A2E;
-            transition: 0.2s;
-        }
+      .job-tag {
+        background: #f8f9fa;
+        padding: 10px 15px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.9rem;
+        border: 1px solid #eef2f7;
+        color: #1a1a2e;
+        transition: 0.2s;
+      }
 
-        .job-tag:hover {
-            background: #D4AF37;
-            color: #ffffff;
-            transform: translateY(-2px);
-        }
+      .job-tag:hover {
+        background: #d4af37;
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
 
-        /* ============================================================
+      /* ============================================================
            TRAINING LIST
            ============================================================ */
-        .training-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-        }
+      .training-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+      }
 
-        .training-item {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            font-weight: 600;
-            border-left: 4px solid #D4AF37;
-        }
+      .training-item {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: 600;
+        border-left: 4px solid #d4af37;
+      }
 
-        /* ============================================================
+      /* ============================================================
            FORM STYLES
            ============================================================ */
-        .contact-form-container {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border: 1px solid #eef2f7;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+      .contact-form-container {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid #eef2f7;
+        max-width: 600px;
+        margin: 0 auto;
+      }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+      .form-group {
+        margin-bottom: 20px;
+      }
 
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: #1A1A2E;
-        }
+      .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: #1a1a2e;
+      }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #cbd5e1;
-            border-radius: 10px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            background: #f8f9fa;
-            transition: 0.2s;
-        }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        background: #f8f9fa;
+        transition: 0.2s;
+      }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: 2px solid #D4AF37;
-            background: #ffffff;
-        }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: 2px solid #d4af37;
+        background: #ffffff;
+      }
 
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
+      .form-group textarea {
+        height: 120px;
+        resize: vertical;
+      }
 
-        .btn-submit {
-            background: #E94560;
-            color: #ffffff;
-            border: none;
-            padding: 14px 36px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            width: 100%;
-            transition: 0.2s;
-            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
-        }
+      .btn-submit {
+        background: #e94560;
+        color: #ffffff;
+        border: none;
+        padding: 14px 36px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+        box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+      }
 
-        .btn-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.5);
-        }
+      .btn-submit:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(233, 69, 96, 0.5);
+      }
 
-        /* ============================================================
+      /* ============================================================
            WHATSAPP FLOATING BUTTON
            ============================================================ */
-        .wa-float {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            background: #25D366;
-            color: white;
-            padding: 14px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            z-index: 999;
-        }
+      .wa-float {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: #25d366;
+        color: white;
+        padding: 14px 20px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        z-index: 999;
+      }
 
-        .wa-float:hover { transform: scale(1.05); }
+      .wa-float:hover {
+        transform: scale(1.05);
+      }
 
-        /* ============================================================
+      /* ============================================================
            RESPONSIVE
            ============================================================ */
-        @media (max-width: 700px) {
-            .page-header h1 { font-size: 2.2rem; }
-            .job-grid { grid-template-columns: 1fr 1fr; }
+      @media (max-width: 700px) {
+        .page-header h1 {
+          font-size: 2.2rem;
         }
+        .job-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- ===== NAVIGATION (LOGO IS NOW A CLICKABLE LINK) ===== -->
     <nav>
-        <div class="logo">
-            <a href="https://hospitalityrecruit.com">Hospitality Recruit <span>· hospitalityrecruit.com</span></a>
-        </div>
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-        <div class="nav-links" id="navLinks">
-            <a href="index.html">Home</a>
-            <a href="about-event.html">About</a>
-            <a href="awards.html">Awards</a>
-            <a href="nominate.html">Nominate</a>
-            <a href="nominees.html">Nominees</a>
-            <a href="join-dhs.html" class="nav-cta">Contact</a>
-        </div>
+      <div class="logo">KWASHATE <span>2026</span></div>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about-event.html">About</a>
+        <a href="awards.html">Awards</a>
+        <a href="nominate.html">Nominate</a>
+        <a href="nominees.html">Nominees</a>
+        <a href="join-dhs.html" class="nav-cta">Contact</a>
+      </div>
     </nav>
 
     <!-- ===== HERO HEADER ===== -->
     <header class="page-header">
-        <h1>Join <span>Hospitality Recruit</span></h1>
-        <p class="tagline">Flexible shifts. Professional training. A career in hospitality. <br><strong>Visit our main site: <a href="https://hospitalityrecruit.com" style="color:#D4AF37; text-decoration:underline;">hospitalityrecruit.com</a></strong></p>
+      <h1>Join <span>Hospitality Recruit</span></h1>
+      <p class="tagline">
+        Flexible shifts. Professional training. A career in hospitality.
+        <br /><strong
+          >Visit our main site:
+          <a
+            href="https://hospitalityrecruit.netlify.app/"
+            style="color: #d4af37; text-decoration: underline"
+            >hospitalityrecruit.com</a
+          ></strong
+        >
+      </p>
     </header>
 
     <!-- ===== MAIN CONTENT ===== -->
     <section class="container">
+      <!-- ===== INTRODUCTION ===== -->
+      <div class="content-card">
+        <h3>🤝 <span>Welcome to Hospitality Recruit</span></h3>
+        <p>
+          Hospitality Recruit is the staffing division of Drecot Consults—a
+          fully registered hospitality firm dedicated to providing high-level
+          professional staff for the hospitality industry in Nigeria, starting
+          from Kwara State and expanding across the nation.
+        </p>
+        <p>
+          When you join us, you’ll have the chance to pick and choose your jobs
+          based on your schedule. This flexible schedule gives our employees the
+          opportunity to work as much or as little as they need. For some, it's
+          a full-time career. For others, it’s a part-time job or just extra
+          cash.
+        </p>
 
-        <!-- ===== INTRODUCTION ===== -->
-        <div class="content-card">
-            <h3>🤝 <span>Welcome to Hospitality Recruit</span></h3>
-            <p>Hospitality Recruit is the staffing division of Drecot Consults—a fully registered hospitality firm dedicated to providing high-level professional staff for the hospitality industry in Nigeria, starting from Kwara State and expanding across the nation.</p>
-            <p>When you join us, you’ll have the chance to pick and choose your jobs based on your schedule. This flexible schedule gives our employees the opportunity to work as much or as little as they need. For some, it's a full-time career. For others, it’s a part-time job or just extra cash.</p>
-            
-            <!-- Explicit link to the main website -->
-            <div style="text-align: center; margin-top: 20px; font-size: 1.1rem;">
-                <strong>🔗 Learn more about us at <a href="https://hospitalityrecruit.netlify.app/" style="color: #D4AF37; font-weight: 700;">hospitalityrecruit.com</a></strong>
-            </div>
+        <!-- Explicit link to the main website -->
+        <div style="text-align: center; margin-top: 20px; font-size: 1.1rem">
+          <strong
+            >🔗 Learn more about us at
+            <a
+              href="https://hospitalityrecruit.netlify.app/"
+              style="color: #d4af37; font-weight: 700"
+              >hospitalityrecruit.com</a
+            ></strong
+          >
+        </div>
+      </div>
+
+      <!-- ===== SERVICE CATEGORIES ===== -->
+      <div class="content-card">
+        <h3>🏢 <span>Service Categories</span></h3>
+        <p>
+          We provide a full range of services from the front of the house to the
+          back of the house.
+        </p>
+
+        <h4 style="margin: 20px 0 10px; color: #1a1a2e">Front of the House</h4>
+        <div class="job-grid">
+          <div class="job-tag">Server</div>
+          <div class="job-tag">Banquet Server</div>
+          <div class="job-tag">Ala Cart Server</div>
+          <div class="job-tag">Mixologist</div>
+          <div class="job-tag">Bartender</div>
+          <div class="job-tag">Barback</div>
+          <div class="job-tag">Set-up Banquet</div>
+          <div class="job-tag">Captain</div>
+          <div class="job-tag">Host / Hostess</div>
+          <div class="job-tag">Coat Check</div>
         </div>
 
-        <!-- ===== SERVICE CATEGORIES ===== -->
-        <div class="content-card">
-            <h3>🏢 <span>Service Categories</span></h3>
-            <p>We provide a full range of services from the front of the house to the back of the house.</p>
-
-            <h4 style="margin: 20px 0 10px; color: #1A1A2E;">Front of the House</h4>
-            <div class="job-grid">
-                <div class="job-tag">Server</div>
-                <div class="job-tag">Banquet Server</div>
-                <div class="job-tag">Ala Cart Server</div>
-                <div class="job-tag">Mixologist</div>
-                <div class="job-tag">Bartender</div>
-                <div class="job-tag">Barback</div>
-                <div class="job-tag">Set-up Banquet</div>
-                <div class="job-tag">Captain</div>
-                <div class="job-tag">Host / Hostess</div>
-                <div class="job-tag">Coat Check</div>
-            </div>
-
-            <h4 style="margin: 20px 0 10px; color: #1A1A2E;">Back of the House</h4>
-            <div class="job-grid">
-                <div class="job-tag">Dishwasher</div>
-                <div class="job-tag">Polisher</div>
-                <div class="job-tag">Steward</div>
-                <div class="job-tag">Porter</div>
-                <div class="job-tag">Expeditor</div>
-                <div class="job-tag">Housemen</div>
-            </div>
-
-            <h4 style="margin: 20px 0 10px; color: #1A1A2E;">Culinary Services</h4>
-            <div class="job-grid">
-                <div class="job-tag">Executive Chef</div>
-                <div class="job-tag">Assistant Chef</div>
-                <div class="job-tag">Food Prep Cook</div>
-                <div class="job-tag">Line Cook</div>
-            </div>
-
-            <h4 style="margin: 20px 0 10px; color: #1A1A2E;">Housekeeping & Janitorial</h4>
-            <div class="job-grid">
-                <div class="job-tag">Housekeeper</div>
-                <div class="job-tag">Housemen</div>
-                <div class="job-tag">Janitor</div>
-                <div class="job-tag">Maintenance</div>
-                <div class="job-tag">Laundry Room</div>
-            </div>
+        <h4 style="margin: 20px 0 10px; color: #1a1a2e">Back of the House</h4>
+        <div class="job-grid">
+          <div class="job-tag">Dishwasher</div>
+          <div class="job-tag">Polisher</div>
+          <div class="job-tag">Steward</div>
+          <div class="job-tag">Porter</div>
+          <div class="job-tag">Expeditor</div>
+          <div class="job-tag">Housemen</div>
         </div>
 
-        <!-- ===== EMPLOYER & PARTNERSHIP SERVICES ===== -->
-        <div class="content-card">
-            <h3>🏨 <span>For Employers & Partners</span></h3>
-            <p>Hospitality Recruit partners with hotels, restaurants, and event centres to provide highly trained, professional staff. All personnel placed go through a rigorous screening and training process to ensure our clients receive the highest standard of service.</p>
-            
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin-top: 16px; border-left: 4px solid #D4AF37;">
-                <p><strong>Customized Programs:</strong> Every client has different needs. We work with you to understand your specific demands and develop a customized staffing program tailored to your venue's culture and standards.</p>
-                <p style="margin-top: 8px;"><strong>Easy Scheduling:</strong> Clients can post job openings directly into our system at any time, or contact a representative with their request.</p>
+        <h4 style="margin: 20px 0 10px; color: #1a1a2e">Culinary Services</h4>
+        <div class="job-grid">
+          <div class="job-tag">Executive Chef</div>
+          <div class="job-tag">Assistant Chef</div>
+          <div class="job-tag">Food Prep Cook</div>
+          <div class="job-tag">Line Cook</div>
+        </div>
+
+        <h4 style="margin: 20px 0 10px; color: #1a1a2e">
+          Housekeeping & Janitorial
+        </h4>
+        <div class="job-grid">
+          <div class="job-tag">Housekeeper</div>
+          <div class="job-tag">Housemen</div>
+          <div class="job-tag">Janitor</div>
+          <div class="job-tag">Maintenance</div>
+          <div class="job-tag">Laundry Room</div>
+        </div>
+      </div>
+
+      <!-- ===== EMPLOYER & PARTNERSHIP SERVICES ===== -->
+      <div class="content-card">
+        <h3>🏨 <span>For Employers & Partners</span></h3>
+        <p>
+          Hospitality Recruit partners with hotels, restaurants, and event
+          centres to provide highly trained, professional staff. All personnel
+          placed go through a rigorous screening and training process to ensure
+          our clients receive the highest standard of service.
+        </p>
+
+        <div
+          style="
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 16px;
+            border-left: 4px solid #d4af37;
+          "
+        >
+          <p>
+            <strong>Customized Programs:</strong> Every client has different
+            needs. We work with you to understand your specific demands and
+            develop a customized staffing program tailored to your venue's
+            culture and standards.
+          </p>
+          <p style="margin-top: 8px">
+            <strong>Easy Scheduling:</strong> Clients can post job openings
+            directly into our system at any time, or contact a representative
+            with their request.
+          </p>
+        </div>
+      </div>
+
+      <!-- ===== TRAINING PROGRAMS ===== -->
+      <div class="content-card">
+        <h3>🎓 <span>DHS Training Programs</span></h3>
+        <p>
+          In addition to providing temporary event support staff, we have a
+          dedicated team of trainers available to provide professional
+          development for both individuals and corporate teams.
+        </p>
+
+        <div class="training-list">
+          <div class="training-item">Banquet Server Training</div>
+          <div class="training-item">Front of the House Training</div>
+          <div class="training-item">Back of the House Training</div>
+          <div class="training-item">Customer Service & Etiquette</div>
+          <div class="training-item">Leadership Training</div>
+        </div>
+      </div>
+
+      <!-- ===== WHY JOIN US ===== -->
+      <div class="content-card">
+        <h3>📝 <span>Why Join Hospitality Recruit?</span></h3>
+        <ul>
+          <li>
+            ✅ <strong>Flexible Schedule:</strong> Work as much or as little as
+            you want.
+          </li>
+          <li>
+            ✅ <strong>Free Certification:</strong> All employees go through our
+            certification training program.
+          </li>
+          <li>
+            ✅ <strong>Your Profile:</strong> Once you create a profile, you
+            never have to re-apply. Just log in, browse new jobs, and apply
+            instantly.
+          </li>
+          <li>
+            ✅ <strong>Stay Updated:</strong> Check your profile daily to see
+            all new jobs. If your phone number or email changes, update your
+            information so you never miss out.
+          </li>
+          <li>
+            ✅ <strong>Social Community:</strong> Stay connected with us on
+            Facebook for updates and community events.
+          </li>
+        </ul>
+      </div>
+
+      <!-- ===== APPLICATION FORM ===== -->
+      <div class="content-card" id="contact">
+        <h3 style="text-align: center">📬 <span>Apply Now</span></h3>
+        <p style="text-align: center; color: #7f8c8d; margin-bottom: 30px">
+          Fill out the form below and we'll get back to you within 24 hours.
+        </p>
+
+        <div class="contact-form-container">
+          <!-- Replace the "action" URL with your own Formspree endpoint to receive emails -->
+          <!-- You can get a free endpoint at formspree.io -->
+          <form action="https://formspree.io/f/mvoqjwlz" method="POST">
+            <div class="form-group">
+              <label for="firstname">First Name</label>
+              <input type="text" id="firstname" name="firstname" required />
             </div>
-        </div>
-
-        <!-- ===== TRAINING PROGRAMS ===== -->
-        <div class="content-card">
-            <h3>🎓 <span>DHS Training Programs</span></h3>
-            <p>In addition to providing temporary event support staff, we have a dedicated team of trainers available to provide professional development for both individuals and corporate teams.</p>
-            
-            <div class="training-list">
-                <div class="training-item">Banquet Server Training</div>
-                <div class="training-item">Front of the House Training</div>
-                <div class="training-item">Back of the House Training</div>
-                <div class="training-item">Customer Service & Etiquette</div>
-                <div class="training-item">Leadership Training</div>
+            <div class="form-group">
+              <label for="lastname">Last Name</label>
+              <input type="text" id="lastname" name="lastname" required />
             </div>
-        </div>
-
-        <!-- ===== WHY JOIN US ===== -->
-        <div class="content-card">
-            <h3>📝 <span>Why Join Hospitality Recruit?</span></h3>
-            <ul>
-                <li>✅ <strong>Flexible Schedule:</strong> Work as much or as little as you want.</li>
-                <li>✅ <strong>Free Certification:</strong> All employees go through our certification training program.</li>
-                <li>✅ <strong>Your Profile:</strong> Once you create a profile, you never have to re-apply. Just log in, browse new jobs, and apply instantly.</li>
-                <li>✅ <strong>Stay Updated:</strong> Check your profile daily to see all new jobs. If your phone number or email changes, update your information so you never miss out.</li>
-                <li>✅ <strong>Social Community:</strong> Stay connected with us on Facebook for updates and community events.</li>
-            </ul>
-        </div>
-
-        <!-- ===== APPLICATION FORM ===== -->
-        <div class="content-card" id="contact">
-            <h3 style="text-align: center;">📬 <span>Apply Now</span></h3>
-            <p style="text-align: center; color: #7f8c8d; margin-bottom: 30px;">Fill out the form below and we'll get back to you within 24 hours.</p>
-
-            <div class="contact-form-container">
-                <!-- Replace the "action" URL with your own Formspree endpoint to receive emails -->
-                <!-- You can get a free endpoint at formspree.io -->
-                <form action="https://formspree.io/f/mvoqjwlz" method="POST">
-                    <div class="form-group">
-                        <label for="firstname">First Name</label>
-                        <input type="text" id="firstname" name="firstname" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname">Last Name</label>
-                        <input type="text" id="lastname" name="lastname" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Tell us about yourself</label>
-                        <textarea id="message" name="message" placeholder="What position are you interested in? Do you have previous experience?" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Submit Application</button>
-                </form>
-                <p style="font-size: 0.8rem; color: #7f8c8d; text-align: center; margin-top: 12px;">By submitting, you agree to be contacted by Hospitality Recruit regarding job opportunities.</p>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required />
             </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Tell us about yourself</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="What position are you interested in? Do you have previous experience?"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Submit Application</button>
+          </form>
+          <p
+            style="
+              font-size: 0.8rem;
+              color: #7f8c8d;
+              text-align: center;
+              margin-top: 12px;
+            "
+          >
+            By submitting, you agree to be contacted by Hospitality Recruit
+            regarding job opportunities.
+          </p>
         </div>
+      </div>
     </section>
 
     <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
-    <a href="https://wa.me/2348039661354?text=Hello%20Hospitality%20Recruit%20Team!%20I%20want%20to%20apply%20for%20a%20job." class="wa-float">💬 Chat with us</a>
+    <a
+      href="https://wa.me/2348039661354?text=Hello%20Hospitality%20Recruit%20Team!%20I%20want%20to%20apply%20for%20a%20job."
+      class="wa-float"
+      >💬 Chat with us</a
+    >
 
     <script>
-        function toggleMenu() {
-            var menu = document.getElementById("navLinks");
-            menu.classList.toggle("active");
-        }
+      function toggleMenu() {
+        var menu = document.getElementById("navLinks");
+        menu.classList.toggle("active");
+      }
     </script>
-</body>
+  </body>
 </html>
