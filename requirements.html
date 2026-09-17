@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Category Requirements – KWASHATE 2026</title>
+    <!-- Luxury Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ============================================================
+           RESET & BASE
+           ============================================================ */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f4f4f9;
+        color: #2c3e50;
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      /* ============================================================
+           NAVIGATION
+           ============================================================ */
+      nav {
+        background: #1a1a2e;
+        color: #ffffff;
+        padding: 16px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+      nav .logo {
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      nav .logo span {
+        color: #d4af37;
+      }
+      .hamburger {
+        display: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #d4af37;
+        user-select: none;
+      }
+      .nav-links {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+      }
+      .nav-links a {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: #d4af37;
+      }
+      .nav-cta {
+        background: #d4af37;
+        color: #1a1a2e !important;
+        padding: 8px 20px;
+        border-radius: 40px;
+        font-weight: 700;
+        transition: 0.2s;
+      }
+      .nav-cta:hover {
+        background: #e6c04c;
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: block;
+        }
+        .nav-links {
+          display: none;
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+          padding: 20px 0;
+          background: #1a1a2e;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          z-index: 999;
+          border-bottom: 2px solid #d4af37;
+        }
+        .nav-links.active {
+          display: flex;
+        }
+        .nav-links a {
+          width: 100%;
+          text-align: center;
+          padding: 8px 0;
+        }
+        .nav-cta {
+          width: 80%;
+          text-align: center;
+        }
+      }
+
+      /* ============================================================
+           HERO HEADER
+           ============================================================ */
+      .page-header {
+        background:
+          linear-gradient(rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.95)),
+          url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80");
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
+        padding: 80px 20px 60px;
+        text-align: center;
+      }
+      .page-header h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      .page-header h1 span {
+        color: #d4af37;
+      }
+      .page-header .tagline {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+        opacity: 0.9;
+      }
+
+      /* ============================================================
+           CONTAINER
+           ============================================================ */
+      .container {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+      .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #1a1a2e;
+      }
+      .section-subtitle {
+        text-align: center;
+        color: #7f8c8d;
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+      }
+
+      /* ============================================================
+           CATEGORY BOXES
+           ============================================================ */
+      .category-box {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+        border: 1px solid #eef2f7;
+      }
+      .category-box h3 {
+        color: #1a1a2e;
+        font-size: 1.8rem;
+        margin-bottom: 16px;
+        border-bottom: 2px solid #d4af37;
+        padding-bottom: 10px;
+      }
+      .category-box h3 span {
+        color: #d4af37;
+      }
+      .category-box p {
+        color: #2c3e50;
+        font-size: 1.05rem;
+        margin-bottom: 10px;
+      }
+      .category-box ul {
+        padding-left: 20px;
+        margin-top: 10px;
+      }
+      .category-box ul li {
+        margin-bottom: 12px;
+        font-size: 1rem;
+        color: #2c3e50;
+        list-style-type: none;
+        position: relative;
+        padding-left: 24px;
+      }
+      .category-box ul li::before {
+        content: "▸";
+        color: #d4af37;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      /* ============================================================
+           BUTTONS
+           ============================================================ */
+      .btn-primary {
+        background: #e94560;
+        color: #ffffff;
+        padding: 16px 36px;
+        border: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1rem;
+        display: inline-block;
+        transition: 0.2s;
+        box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(233, 69, 96, 0.5);
+      }
+
+      /* ============================================================
+           WHATSAPP FLOATING BUTTON
+           ============================================================ */
+      .wa-float {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: #25d366;
+        color: white;
+        padding: 14px 20px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        z-index: 999;
+      }
+      .wa-float:hover {
+        transform: scale(1.05);
+      }
+
+      /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+      @media (max-width: 700px) {
+        .page-header h1 {
+          font-size: 2.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo" style="background: white; padding: 2px 10px; border-radius: 8px">
+        <a href="index.html">
+          <img
+            src="img/award-logo4.png"
+            alt="KSHA Logo"
+            style="height: 30px; width: auto"
+          /> 
+        <span style="font-weight: 700; font-size: 1.2rem; padding-top: 5px; color: black">KWASHATE</span>
+        </a>
+      </div>
+      
+
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about-event.html">About</a>
+        <a href="awards.html">Awards</a>
+        <a href="https://hteanigeria.netlify.app/">HTEA</a>
+        <a href="nominate.html">Nominate</a>
+        <a href="nominees.html">Nominees</a>
+        <a href="join-dhs.html">Contact</a>
+      </div>
+    </nav>
+
+    <header class="page-header">
+      <h1>Category <span>Requirements</span></h1>
+      <p class="tagline">
+        The official judging criteria for every KWASHATE 2026 award category.
+      </p>
+      <p style="text-align: center; margin-top: 10px">
+        <a
+          href="awards.html"
+          style="color: #d4af37; font-weight: 600; text-decoration: underline"
+          >📋 View the full list of award categories</a
+        >
+      </p>
+    </header>
+
+    <section class="container">
+      <!-- ============================================================
+           HOTELS CATEGORY
+           ============================================================ -->
+      <div id="hotels" class="category-box">
+        <h3>🏨 <span>Hotels Category</span></h3>
+        <p>
+          <strong>Eligibility:</strong> Hotels operating in Kwara State for at
+          least 1 year with valid CAC registration.
+        </p>
+        <ul>
+          <li>
+            <strong>Best Luxury Hotel:</strong> Exceptional interior design,
+            premium amenities (spa, pool, gym), 24/7 room service, high-end
+            dining, and a 4.5+ star online reputation.
+          </li>
+          <li>
+            <strong>Best Green Hotel:</strong> Sustainable practices (solar
+            energy, water recycling, waste reduction), eco-friendly materials,
+            and community environmental programs.
+          </li>
+          <li>
+            <strong>Best Sport Hotel:</strong> On-site fitness facilities (gym,
+            swimming pool, sports courts), proximity to sports venues, and
+            athlete-friendly services.
+          </li>
+          <li>
+            <strong>Best Business Hotel:</strong> High-speed Wi-Fi,
+            conference/meeting rooms, business center services, and quiet,
+            work-friendly environments.
+          </li>
+          <li>
+            <strong>Best Design Hotel:</strong> Unique, visually stunning
+            architecture and interior design, blending modern style with local
+            cultural elements.
+          </li>
+          <li>
+            <strong>Best Historical Hotel:</strong> Historical significance,
+            preservation of original architecture, and educational storytelling
+            about the property's past.
+          </li>
+          <li>
+            <strong>Best Innovative Hotel:</strong> Use of cutting-edge
+            technology (smart rooms, AI concierge), unique guest experiences,
+            and creative operational solutions.
+          </li>
+          <li>
+            <strong>Opening of the Year:</strong> A hotel that opened within the
+            last 12 months, demonstrating immediate excellence in service,
+            design, and guest satisfaction.
+          </li>
+          <li>
+            <strong>Best Bar In A Hotel:</strong> A hotel bar with a premium
+            drink selection, expert mixology, excellent atmosphere, and
+            professional service.
+          </li>
+          <li>
+            <strong>Best Nightlife Hotel:</strong> A hotel that offers vibrant
+            evening entertainment, live music, DJ events, and a safe, enjoyable
+            nightlife experience.
+          </li>
+          <li>
+            <strong>Best Hotel GM:</strong> An individual General Manager
+            demonstrating outstanding leadership, guest satisfaction scores, and
+            staff development.
+          </li>
+          <li>
+            <strong>Best Guest House:</strong> A smaller property offering warm
+            hospitality, clean and comfortable rooms, and personalized guest
+            services.
+          </li>
+          <li>
+            <strong>Best Motel:</strong> A clean, safe, and affordable property
+            with convenient access to major roads, offering basic but quality
+            accommodation.
+          </li>
+          <li>
+            <strong>Best Night View Hotel:</strong> A hotel with spectacular
+            views of the Kwara State skyline or natural landscapes, offering
+            excellent outdoor seating areas.
+          </li>
+          <li>
+            <strong>Best Corporate Social Responsibility:</strong> A hotel
+            actively giving back to the local community through charity,
+            education, or environmental projects.
+          </li>
+        </ul>
+      </div>
+
+      <!-- ============================================================
+           RESTAURANTS CATEGORY
+           ============================================================ -->
+      <div id="restaurants" class="category-box">
+        <h3>🍔 <span>Restaurants & Fast-Food Category</span></h3>
+        <p>
+          <strong>Eligibility:</strong> Restaurants operating in Kwara State for
+          at least 1 year with valid CAC registration.
+        </p>
+        <ul>
+          <li>
+            <strong>Best Restaurant:</strong> A full-service restaurant offering
+            exceptional cuisine, a welcoming ambiance, impeccable service, and
+            high-quality locally sourced ingredients.
+          </li>
+          <li>
+            <strong>Best Fast-Food:</strong> A quick-service restaurant offering
+            fresh, delicious meals with efficient service, clean facilities, and
+            good value for money.
+          </li>
+          <li>
+            <strong>Best African Restaurant:</strong> A restaurant specializing
+            in traditional Nigerian and African cuisine, celebrating local
+            flavors and culinary heritage.
+          </li>
+          <li>
+            <strong>Best Continental Restaurant:</strong> A restaurant offering
+            international cuisine (European, Asian, etc.) with authentic recipes
+            and a sophisticated dining experience.
+          </li>
+        </ul>
+      </div>
+
+      <!-- ============================================================
+           TRANSPORT CATEGORY
+           ============================================================ -->
+      <div id="transport" class="category-box">
+        <h3>🚌 <span>Transport Category</span></h3>
+        <p>
+          <strong>Eligibility:</strong> Transport companies operating in Kwara
+          State for at least 1 year with valid CAC registration.
+        </p>
+        <ul>
+          <li>
+            <strong>Best Transport Company:</strong> A company offering
+            reliable, safe, and punctual transportation services with
+            well-maintained vehicles.
+          </li>
+          <li>
+            <strong>Best Operating Airline:</strong> An airline operating from
+            Kwara State offering excellent customer service, flight punctuality,
+            and passenger comfort.
+          </li>
+          <li>
+            <strong>The Oldest Transport Company:</strong> A transport company
+            with a long-standing history in Kwara State, demonstrating
+            resilience and enduring service to the community.
+          </li>
+          <li>
+            <strong>Best Traveling Agency:</strong> A travel agency offering
+            exceptional tour packages, customer support, and unique travel
+            experiences in Kwara State.
+          </li>
+        </ul>
+      </div>
+
+      <!-- ============================================================
+           GENERAL CATEGORY
+           ============================================================ -->
+      <div id="general" class="category-box">
+        <h3>🎉 <span>General Category</span></h3>
+        <p>
+          <strong>Eligibility:</strong> Businesses operating in Kwara State for
+          at least 1 year with valid CAC registration.
+        </p>
+        <ul>
+          <li>
+            <strong>Best Club:</strong> A premier nightclub offering top-tier
+            sound systems, lighting, DJ performances, and a safe, enjoyable
+            atmosphere.
+          </li>
+          <li>
+            <strong>Best Lounge:</strong> An upscale lounge offering premium
+            drinks, comfortable seating, a sophisticated ambiance, and excellent
+            customer service.
+          </li>
+          <li>
+            <strong>Best Event Planner:</strong> An event planning company
+            demonstrating creativity, organizational excellence, and successful
+            execution of high-profile events.
+          </li>
+          <li>
+            <strong>Best Event Centre:</strong> A versatile event hall with
+            modern facilities, professional staff, and a proven track record of
+            hosting successful events.
+          </li>
+          <li>
+            <strong>Best Catering Services:</strong> A catering company offering
+            exceptional food quality, presentation, and service for weddings,
+            corporate events, and private parties.
+          </li>
+          <li>
+            <strong>Best Event Decorator:</strong> A decorator with a portfolio
+            of beautifully designed events, showcasing creativity, attention to
+            detail, and the ability to transform spaces.
+          </li>
+        </ul>
+      </div>
+
+      <!-- ===== NOMINATION CTA ===== -->
+      <div
+        class="category-box"
+        style="
+          text-align: center;
+          background: #1a1a2e;
+          color: #ffffff;
+          border: 2px solid #d4af37;
+        "
+      >
+        <h3 style="color: #d4af37; border-bottom: none">Ready to Nominate?</h3>
+        <p
+          style="
+            color: #e2e8f0;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+          "
+        >
+          If your business meets the requirements and you are ready to compete
+          for the KWASHATE Gold Award, submit your nomination today.
+        </p>
+        <a href="nominate.html" class="btn-primary">📋 Go to Nomination Page</a>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="container" style="padding-top: 0">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">
+        Have questions about nominations, attending, or sponsoring?
+      </p>
+      <div
+        class="category-box"
+        style="text-align: center; max-width: 500px; margin: 0 auto"
+      >
+        <div style="font-size: 1.5rem; margin-bottom: 12px">📞 08039661354</div>
+        <div style="color: #7f8c8d; margin-bottom: 8px">
+          Email: oborimusa@gmail.com
+        </div>
+        <a
+          href="https://wa.me/2348039661354"
+          class="btn-primary"
+          style="display: inline-block; margin-top: 16px"
+          >📱 Chat on WhatsApp</a
+        >
+      </div>
+    </section>
+
+    <a
+      href="https://wa.me/2348039661354?text=Hello%20KWASHATE%20Team!%20I%20need%20more%20information."
+      class="wa-float"
+      >💬 Chat with us</a
+    >
+
+    <script>
+      function toggleMenu() {
+        var menu = document.getElementById("navLinks");
+        menu.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
